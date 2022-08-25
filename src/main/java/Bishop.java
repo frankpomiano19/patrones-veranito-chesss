@@ -10,6 +10,7 @@ import javax.swing.ImageIcon;
  * @version 2010.11.17
  */
 public class Bishop extends ChessGamePiece{
+	ImageIcon resultado;
 	/**
 	 * Creates a new Bishop object.
 	 * 
@@ -53,20 +54,10 @@ public class Bishop extends ChessGamePiece{
 	 */
 	@Override
 	public ImageIcon createImageByPieceType(){
-		if ( getColorOfPiece() == ChessGamePiece.WHITE ){
-			return new ImageIcon(
-				getClass().getResource("chessImages/WhiteBishop.gif")
-			);			
-		}
-		else if ( getColorOfPiece() == ChessGamePiece.BLACK ){
-			return new ImageIcon(
-				getClass().getResource("chessImages/BlackBishop.gif")
-			);
-		}
-		else{
-			return new ImageIcon(
-				getClass().getResource("chessImages/BlackBishop.gif")
-			);
-		}
+		resultado = getColorOfPiece() == ChessGamePiece.WHITE ? new ImageIcon(
+                getClass().getResource("chessImages/WhiteBishop.gif"))
+                : new ImageIcon(
+                        getClass().getResource("chessImages/BlackBishop.gif"));
+        return resultado;
 	}
 }
